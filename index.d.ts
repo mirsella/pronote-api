@@ -196,6 +196,13 @@ export class PronoteStudentSession extends PronoteSession
     infos(): Promise<Array<Info> | null>
 
     /**
+      * Récupère la liste de toutes les messagerie disponibles.
+      *
+      * @return La liste des messagerie. Si l'onglet des messagerie n'est pas disponible, `null` sera renvoyé.
+      */
+    messagerie(): Promise<Array<Info> | null>
+
+    /**
      * Récupère les contenus des cours situés dans l'intervalle de temps donnée.
      *
      * Attention : Par défaut, une Date en JavaScript est initialisée à minuit si l'heure n'est pas donnée,
@@ -341,6 +348,14 @@ export class PronoteParentSession extends PronoteSession
      * @return La liste des informations. Si l'onglet des informations n'est pas disponible, `null` sera renvoyé.
      */
     infos(student: PronoteStudent): Promise<Array<Info> | null>
+
+    /**
+     * Récupère la liste de toutes les messagerie disponibles.
+     *
+     * @return La liste des messagerie. Si l'onglet des messagerie n'est pas disponible, `null` sera renvoyé.
+     */
+    messagerie(): Promise<Array<Info> | null>
+
 
     /**
      * Récupère les contenus des cours d'un élève situés dans l'intervalle de temps donnée.
@@ -1387,6 +1402,7 @@ export function fetchMarks(session: PronoteSession, period?: PronotePeriod): Pro
 export function fetchEvaluations(session: PronoteSession, period?: PronotePeriod): Promise<Array<PronoteEvaluation>>;
 export function fetchAbsences(session: PronoteSession, period?: PronotePeriod, from?: Date, to?: Date): Promise<PronoteAbsences>;
 export function fetchInfos(session: PronoteSession): Promise<PronoteInfos>;
+export function fetchMessagerie(session: PronoteSession): Promise<PronoteMessagerie>;
 export function fetchContents(session: PronoteSession, fromWeek?: number, toWeek?: number): Promise<PronoteLessonsContents>;
 export function fetchHomeworks(session: PronoteSession, fromWeek?: number, toWeek?: number): Promise<Array<PronoteHomework>>;
 export function fetchMenu(session: PronoteSession, date?: Date): Promise<PronoteMenu>;
@@ -1720,7 +1736,7 @@ export interface PronoteUserSettings
     version: number, // version
     timetable: PronoteUserTimetableSettings, // EDT
     theme: number, // theme.theme
-    unreadDiscussions: boolean, // Communication.DiscussionNonLues
+    unreadMessagerie: boolean, // Communication.DiscussionNonLues
 }
 
 export interface PronoteUserTimetableSettings
@@ -1744,8 +1760,8 @@ export interface PronoteSessionAuthorizations
 
 export interface PronoteUserAuthorizations
 {
-    discussions: boolean, // AvecDiscussion
-    teachersDiscussions: boolean, // AvecDiscussionProfesseurs
+    messagerie: boolean, // AvecDiscussion
+    teachersMessagerie: boolean, // AvecDiscussionProfesseurs
     timetableVisibleWeeks: Array<number>, // cours.domaineConsultationEDT
     canEditLessons: Array<number>, // cours.domaineModificationCours
     hideClassParts: boolean, // cours.masquerPartiesDeClasse
@@ -1980,6 +1996,13 @@ export interface PronoteInfos
 {
     categories: Array<PronoteInfoCategory>,
     infos: Array<PronoteInfo>
+}
+
+
+export interface PronoteMessagerie
+{
+  categories: Array<PronoteMessagerieCategory>,
+  messagerie: Array<PronoteMessagerie>
 }
 
 export interface PronoteInfoCategory extends PronoteObject

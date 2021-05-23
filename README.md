@@ -1,4 +1,9 @@
-# Pronote API - LISEZ MOI ABSOLUMENT
+# ce fork ajoute session.messagerie() : liste les messages (titre, date, auteur, lue ou non et les noms de fichiers)
+# TODO: sessions.message() : récupère le texte d'un message et les fichiers
+</br>
+</br>
+
+## Pronote API - LISEZ MOI ABSOLUMENT
 
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Litarvan/pronote-api/Node.js%20linting%20and%20testing/master?label=tests&logo=github&style=flat-square)
 [![MIT license](https://img.shields.io/badge/license-MIT-lightgray?style=flat-square)](LICENSE)
@@ -16,6 +21,7 @@ Disponible en tant que :
 ## Données récupérables
 
 - Infos Pronote, établissement et utilisateur
+- Messagerie (sans l'actuel texte ou fichiers)
 - Emploi du temps
 - Devoirs
 - Notes
@@ -110,7 +116,7 @@ async function main()
     console.log(`et a pour l'instant une moyenne de ${marks.averages.student} ce trimestre.`);
     
     // etc. les fonctions utilisables sont 'timetable', 'marks', 'contents', 'evaluations', 'absences', 
-    // 'homeworks', 'infos', et 'menu', sans oublier les champs 'user' et 'params' qui regorgent d'informations.
+    // 'homeworks', 'infos', 'messagerie', et 'menu', sans oublier les champs 'user' et 'params' qui regorgent d'informations.
 }
 
 main().catch(err => {

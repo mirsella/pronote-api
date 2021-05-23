@@ -42,6 +42,7 @@ async function student()
     const evaluations = await session.evaluations();
     const absences = await session.absences();
     const infos = await session.infos();
+    const messagerie = await session.messagerie();
     const contents = await session.contents(from, to);
     const homeworks = await session.homeworks(from, to);
     const menu = await session.menu(from, to);
@@ -53,7 +54,7 @@ async function student()
         avatar: session.user.avatar,
 
         timetable, marks, evaluations, absences,
-        infos, contents, homeworks, menu, files
+        infos, messagerie, contents, homeworks, menu, files
     };
 }
 
@@ -73,6 +74,7 @@ async function parent()
         const evaluations = await session.evaluations(student);
         const absences = await session.absences(student);
         const infos = await session.infos(student);
+        const messagerie = await session.messagerie(student);
         const contents = await session.contents(student, from, to);
         const homeworks = await session.homeworks(student, from, to);
         const menu = await session.menu(student, from, to);
@@ -84,7 +86,7 @@ async function parent()
             avatar: student.avatar,
 
             timetable, marks, evaluations, absences,
-            infos, contents, homeworks, menu, files
+            infos, messagerie, contents, homeworks, menu, files
         });
     }
 

@@ -425,7 +425,7 @@ type PronoteUserSettings {
     version: Float!
     timetable: PronoteUserTimetableSettings!
     theme: Int!
-    unreadDiscussions: Boolean!
+    unreadMessagerie: Boolean!
 }
 
 type PronoteUserTimetableSettings {
@@ -441,8 +441,8 @@ type PronoteUserTimetableSettings {
 }
 
 type PronoteUserAuthorizations {
-    discussions: Boolean!
-    teachersDiscussions: Boolean!
+    messagerie: Boolean!
+    teachersMessagerie: Boolean!
     timetableVisibleWeeks: [Int!]!
     canEditLessons: [Int!]!
     hideClassParts: Boolean!

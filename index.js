@@ -17,6 +17,7 @@ const getMarks = require('./src/fetch/pronote/marks');
 const getEvaluations = require('./src/fetch/pronote/evaluations');
 const getAbsences = require('./src/fetch/pronote/absences');
 const getInfos = require('./src/fetch/pronote/infos');
+const getMessagerie = require('./src/fetch/pronote/messagerie');
 const getContents = require('./src/fetch/pronote/contents');
 const getHomeworks = require('./src/fetch/pronote/homeworks');
 const getMenu = require('./src/fetch/pronote/menu');
@@ -55,6 +56,7 @@ module.exports = {
     fetchEvaluations: getEvaluations,
     fetchAbsences: getAbsences,
     fetchInfos: getInfos,
+    fetchMessagerie: getMessagerie,
     fetchContents: getContents,
     fetchHomeworks: getHomeworks,
     fetchMenu: getMenu,

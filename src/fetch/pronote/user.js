@@ -39,15 +39,15 @@ async function getUser(session)
                 sequenceCount: EDT.nbSequences
             },
             theme: theme.theme,
-            unreadDiscussions: Communication.DiscussionNonLues
+            unreadMessagerie: Communication.DiscussionNonLues
         }))(user.parametresUtilisateur),
         sessionAuthorizations: {
             twitterManagement: user.autorisationsSession.fonctionnalites.gestionTwitter,
             expandedAttestation: user.autorisationsSession.fonctionnalites.attestationEtendue
         },
         authorizations: {
-            discussions: aut.AvecDiscussion,
-            teachersDiscussions: aut.AvecDiscussionProfesseurs,
+            messagerie: aut.AvecDiscussion,
+            teachersMessagerie: aut.AvecDiscussionProfesseurs,
             timetableVisibleWeeks: parse(aut.cours.domaineConsultationEDT),
             canEditLessons: parse(aut.cours.domaineModificationCours),
             hideClassParts: aut.cours.masquerPartiesDeClasse,
