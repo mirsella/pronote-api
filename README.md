@@ -1,5 +1,6 @@
-# ce fork ajoute session.messagerie() : liste les messages (titre, date, auteur, lue ou non et les noms de fichiers)
-# TODO: sessions.message() : récupère le texte d'un message et les fichiers
+# ce fork ajoute :
+### messagerie() : liste les discussions dans la messagerie. retourne entre-autre ConversationId
+### message(ConversationId) : récupère une discussions de la messagerie.
 </br>
 </br>
 
@@ -21,7 +22,8 @@ Disponible en tant que :
 ## Données récupérables
 
 - Infos Pronote, établissement et utilisateur
-- Messagerie (sans l'actuel texte ou fichiers)
+- Messagerie
+- Message
 - Emploi du temps
 - Devoirs
 - Notes
@@ -116,7 +118,7 @@ async function main()
     console.log(`et a pour l'instant une moyenne de ${marks.averages.student} ce trimestre.`);
     
     // etc. les fonctions utilisables sont 'timetable', 'marks', 'contents', 'evaluations', 'absences', 
-    // 'homeworks', 'infos', 'messagerie', et 'menu', sans oublier les champs 'user' et 'params' qui regorgent d'informations.
+    // 'homeworks', 'infos', 'messagerie', 'message, et 'menu', sans oublier les champs 'user' et 'params' qui regorgent d'informations.
 }
 
 main().catch(err => {

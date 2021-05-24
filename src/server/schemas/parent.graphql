@@ -5,6 +5,7 @@ extend type Query {
     absences(student: String!, period: String, from: Date, to: Date): Absences
     infos(student: String!): [Info!]
     messagerie(student: String!): [Info!]
+    message(student: String!, ConversationId: String): [Info!]
     contents(student: String!, from: Date, to: Date): [LessonContent!]
     homeworks(student: String!, from: Date, to: Date): [Homework!]
     menu(student: String!, from: Date, to: Date): [MenuDay!]

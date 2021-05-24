@@ -25,9 +25,9 @@ async function fetch()
         break;
     }
 
-    await fs.writeFile('result.json', JSON.stringify(result, null, 4));
+    await fs.writeFile(accountType + 'result.json', JSON.stringify(result, null, 4));
 
-    console.log('Wrote \'result.json\'');
+    console.log('Wrote \'' + accountType + 'result.json\'');
 }
 
 async function student()
@@ -43,6 +43,7 @@ async function student()
     const absences = await session.absences();
     const infos = await session.infos();
     const messagerie = await session.messagerie();
+    const message = await session.message((await session.messagerie())[0]);
     const contents = await session.contents(from, to);
     const homeworks = await session.homeworks(from, to);
     const menu = await session.menu(from, to);
@@ -54,7 +55,7 @@ async function student()
         avatar: session.user.avatar,
 
         timetable, marks, evaluations, absences,
-        infos, messagerie, contents, homeworks, menu, files
+        infos, messagerie, message, contents, homeworks, menu, files
     };
 }
 

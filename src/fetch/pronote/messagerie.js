@@ -1,7 +1,7 @@
 const navigate = require('./navigate');
 
 const PAGE_NAME = 'ListeMessagerie';
-const TAB_ID = 13;
+const TAB_ID = 131;
 const ACCOUNTS = ['student', 'parent'];
 
 async function getMessagerie(session, user)
@@ -24,7 +24,6 @@ async function getMessagerie(session, user)
             nextObjet = message.objet
         } else {
             result.push({
-                // The id used to retrieve the actual message content, if i implement it one day
                 ConversationId: message.listePossessionsMessages.V[0].N,
                 title: nextObjet,
                 date: message.libelleDate,

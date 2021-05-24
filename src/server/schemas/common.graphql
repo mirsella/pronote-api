@@ -169,6 +169,23 @@ type Info {
     files: [File!]!
 }
 
+type Messagerie {
+    ConversationId: String!
+    date: Date!
+    title: String
+    author: String!
+    files: [File!]!
+}
+
+type Message {
+    ConversationId: String!
+    date: Date!
+    title: String
+    author: String!
+    files: [File!]!
+    text: String
+}
+
 type LessonContent {
     id: String!
     subject: String!
@@ -425,7 +442,7 @@ type PronoteUserSettings {
     version: Float!
     timetable: PronoteUserTimetableSettings!
     theme: Int!
-    unreadMessagerie: Boolean!
+    unreadDiscussions: Boolean!
 }
 
 type PronoteUserTimetableSettings {
@@ -441,8 +458,8 @@ type PronoteUserTimetableSettings {
 }
 
 type PronoteUserAuthorizations {
-    messagerie: Boolean!
-    teachersMessagerie: Boolean!
+    discussions: Boolean!
+    teachersDiscussions: Boolean!
     timetableVisibleWeeks: [Int!]!
     canEditLessons: [Int!]!
     hideClassParts: Boolean!

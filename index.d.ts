@@ -198,9 +198,16 @@ export class PronoteStudentSession extends PronoteSession
     /**
       * Récupère la liste de toutes les messagerie disponibles.
       *
-      * @return La liste des messagerie. Si l'onglet des messagerie n'est pas disponible, `null` sera renvoyé.
+      * @return La liste des messages : date, auteur, status lu et ConversationId (voir message()). Si l'onglet des messagerie n'est pas disponible, `null` sera renvoyé.
       */
     messagerie(): Promise<Array<Info> | null>
+
+    /**
+     * Récupère le texte et fichiers d'un message
+     *
+     * @return Le texte et lien des fichiers d'un message, date, auteur et le status lu 
+     */
+    message(ConversationId: String): Promise<Array<Info> | null>
 
     /**
      * Récupère les contenus des cours situés dans l'intervalle de temps donnée.
