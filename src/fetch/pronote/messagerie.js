@@ -8,8 +8,7 @@ async function getMessagerie(session, user)
 {
     const messagerie = await navigate(session, user, PAGE_NAME, TAB_ID, ACCOUNTS, {
         avecLu: true,
-        avecMessage: true,
-        possessionMessageDiscussionUnique: null
+        avecMessage: true
     });
 
     if (!messagerie) {
@@ -18,18 +17,18 @@ async function getMessagerie(session, user)
 
     const result = []
 
-    let nextObjet = ''
+    let lastdata = ''
     for (const message of messagerie.listeMessagerie.V) {
         if (message.N === '0') {
-            nextObjet = message.objet
+            lastdata = message
         } else {
             result.push({
                 ConversationId: message.listePossessionsMessages.V[0].N,
-                title: nextObjet,
-                date: message.libelleDate,
-                author: message.public_gauche,
-                seen: message.lu,
-                files: message.documentsJoints
+                title: lastdata.objet,
+                date: lastdata.libelleDate,
+                author: lastdata.initiateur,
+                seen: lastdata.lu || false,
+                files: lastdata.documentsJoints || null
             })
         }
     }

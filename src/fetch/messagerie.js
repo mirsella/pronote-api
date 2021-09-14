@@ -10,16 +10,12 @@ async function messagerie(session, user)
     const result = [];
 
     for (const message of messagerie) {
-
-        const dates = message.date.split(' ')
-        const DateDmy = dates[1].split('/')
-        const DateMdy = [DateDmy[1], DateDmy[0], DateDmy[2]]
-        const dateh = dates[2].split('h')
-        const parseddate = new Date(new Date(DateMdy).setUTCHours(dateh[0], dateh[1], 0, 0))
-
+        if (!message.date) {
+            continue
+        }
         result.push({
             ConversationId: message.ConversationId,
-            date: parseddate,
+            date: message.date,
             title: message.title,
             seen: message.seen || false,
             author: message.author,
