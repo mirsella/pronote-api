@@ -38,7 +38,7 @@
         "node-forge": "0.6.33",
         "pako": "^2.0.4",
         "polka": "^0.5.2",
-        "string-strip-html": "^8.3.0",
+        "string-strip-html": "^9.1.1",
         "uuid": "^8.3.0",
         "xxhashjs": "^0.2.2"
     },
