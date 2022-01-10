@@ -35,7 +35,7 @@
         "body-parser": "^1.19.0",
         "graphql": "^15.6.0",
         "jsdom": "^17.0.0",
-        "node-forge": "0.6.33",
+        "node-forge": "1.0.0",
         "pako": "^2.0.4",
         "polka": "^0.5.2",
         "string-strip-html": "^8.3.0",
