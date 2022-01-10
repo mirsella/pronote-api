@@ -33,7 +33,7 @@
     "dependencies": {
         "axios": "^0.24.0",
         "body-parser": "^1.19.0",
-        "graphql": "^15.6.0",
+        "graphql": "^16.2.0",
         "jsdom": "^17.0.0",
         "node-forge": "0.6.33",
         "pako": "^2.0.4",
