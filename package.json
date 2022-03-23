@@ -6,7 +6,7 @@
     "types": "index.d.ts",
     "type": "commonjs",
     "engines": {
-        "node": ">=16.0.0"
+        "node": ">=14.0.0"
     },
     "scripts": {
         "start": "node ./bin/server.js",
@@ -23,7 +23,7 @@
     "author": "Adrien 'Litarvan' Navratil <adrien1975@live.fr>",
     "license": "MIT",
     "repository": {
-        "url": "https://github.com/Litarvan/pronote-api.git",
+        "url": "https://github.com/mirsella/pronote-api.git",
         "type": "git"
     },
     "bin": {
